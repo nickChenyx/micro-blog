@@ -10,6 +10,18 @@
   <body>
     <div>Microblog: <a href="/index">Home</a></div>
     <hr>
+      <!-- start-->
+      <!-- 显示flash中的内容，用作用户反馈 -->
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li>{{message}}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+      <!-- end -->
     <!--block块定义派生模板可以插入的地方-->
     {% block content %}{% endblock %}
   </body>

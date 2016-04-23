@@ -88,6 +88,7 @@ def indexbase():
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     form = LoginForm()
+
     '''
     validate_on_submit 方法做了所有表单处理工作。
     当表单正在展示给用户的时候调用它，它会返回 False.
@@ -105,4 +106,5 @@ def login():
         return redirect('/indexbase')
     return render_template('login.html',
         title = 'Sign In',
-        form = form)
+        form = form,
+        providers = app.config['OPENID_PROVIDERS'])

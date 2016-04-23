@@ -8,8 +8,10 @@
 这是必须的，这样 Flask 才知道到哪去找模板、静态文件等等。
 '''
 from flask import Flask
-
+from flask.ext.sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config.from_object('config')
+db = SQLAlchemy(app)
+
 #app/views.py 文件中使用到了app.route 必须在app对象实例化之后导入
-from app import views
+from app import views,models
