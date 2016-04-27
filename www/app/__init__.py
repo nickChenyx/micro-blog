@@ -9,9 +9,20 @@
 '''
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
+import os
+from flask.ext.login import LoginManager
+from flask.ext.openid import OpenID
+from config import basedir
 app = Flask(__name__)
 app.config.from_object('config')
 db = SQLAlchemy(app)
+
+lm = LoginManager()
+lm.init_app(app)
+lm.login_view='login'
+#Flask-OpenID 扩展需要一个存储文件的临时文件夹的路径。
+#对此，我们提供了一个 tmp 文件夹的路径。
+oid = OpenID(app,os.path.join(basedir,'tmp'))
 
 #app/views.py 文件中使用到了app.route 必须在app对象实例化之后导入
 from app import views,models
