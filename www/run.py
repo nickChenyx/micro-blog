@@ -6,5 +6,7 @@ from sys import argv
 #f,h,p = argv
 #print h,p
 #app.run(host=h,port=int(p),debug=True)
-app.run(debug = True)
-#app.run(host='127.0.0.1' port=5000 debug=True)
+#app.run(debug = True)
+#app.run(host='127.0.0.1',port=5000,debug=True)
+#app.run(host='39.183.43.241',port=5000,debug=True)
+app.run(host='0.0.0.0',port=5000,debug=True)
