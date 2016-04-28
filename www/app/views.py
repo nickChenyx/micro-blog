@@ -156,7 +156,7 @@ def edit():
 		return redirect(url_for('edit'))
 	else:
 		form.nickname.data = g.user.nickname
-		form.nickname.data = g.user.about_me
+		form.about_me.data = g.user.about_me
 	return render_template('edit.html',form=form)
 
 @lm.user_loader
