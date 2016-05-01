@@ -32,3 +32,7 @@ MAIL_PASSWORD = None
 
 # administrator list
 ADMINS = ['chenyxup@163.com']
+
+
+# pagination
+POSTS_PER_PAGE = 3

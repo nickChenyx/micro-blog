@@ -6,9 +6,13 @@
     {% else %}
     <title>microblog</title>
     {% endif %}
+    <style type="text/css">
+      body,th,td,p,h1,h2{ font-style:oblique;}
+      i {font-family: "Georgia", Tahoma, Sans-Serif;}
+    </style>
   </head>
   <body>
-    <div>Microblog: <a href="/index">Home</a>
+    <div>Microblog: <a href="/indexbase">Home</a>
     {% if g.user.is_authenticated %}
     | <a href="{{ url_for('user',nickname = g.user.nickname) }}">Your Profile</a>
     | <a href="{{url_for('logout')}}">Logout</a>
